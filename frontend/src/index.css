@@ -1,3 +1,82 @@
+/* src/index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* গ্রেডিয়েন্ট শুধু টেক্সট ও অ্যাকসেন্ট এলিমেন্টে */
+  .gradient-text {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(135deg, #0453d8, #05ee2a, #35cbe0);
+  }
+  
+  .gradient-text-primary {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(135deg, #0453d8, #35cbe0);
+  }
+
+  .gradient-text-secondary {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(135deg, #44b51e, #83de22);
+  }
+
+  .gradient-text-accent {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(135deg, #05ee2a, #35cbe0);
+  }
+
+  /* ব্যাকগ্রাউন্ড সলিড/নিউট্রাল */
+  .card-bg {
+    @apply bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .section-bg {
+    @apply bg-[#f8fafc];
+  }
+
+  .hero-bg {
+    @apply bg-white;
+  }
+
+  /* অ্যাকসেন্ট এলিমেন্টে গ্রেডিয়েন্ট */
+  .gradient-btn {
+    @apply text-white transition-all duration-300;
+    background-image: linear-gradient(135deg, #0453d8, #35cbe0);
+  }
+
+  .gradient-btn:hover {
+    background-image: linear-gradient(135deg, #0350c0, #2ab5d0);
+    transform: scale(1.02);
+  }
+
+  .accent-border {
+    @apply border-2 border-transparent;
+    background-image: linear-gradient(135deg, #0453d8, #35cbe0);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}

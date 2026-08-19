@@ -1,0 +1,205 @@
+/* src/components/features/Hero.css */
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+/* ===== WATERMARK TEXTS - SLIDING LEFT TO RIGHT ===== */
+.watermark-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.watermark-text {
+  position: absolute;
+  font-weight: 700;
+  white-space: nowrap;
+  font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  animation: slideLeftRight 18s ease-in-out infinite alternate;
+  opacity: 0;
+}
+
+/* ===== TEXT STYLES - Smaller & Visible ===== */
+.watermark-text-1 {
+  top: 6%;
+  left: -20%;
+  font-size: 3rem;
+  background: linear-gradient(135deg, rgba(5, 238, 42, 0.35), rgba(53, 203, 224, 0.35));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 0s;
+  animation-duration: 16s;
+  opacity: 0.7;
+}
+
+.watermark-text-2 {
+  top: 18%;
+  left: -30%;
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, rgba(53, 203, 224, 0.35), rgba(4, 83, 216, 0.35));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 2s;
+  animation-duration: 18s;
+  opacity: 0.6;
+}
+
+.watermark-text-3 {
+  top: 32%;
+  left: -15%;
+  font-size: 3.2rem;
+  background: linear-gradient(135deg, rgba(4, 83, 216, 0.35), rgba(5, 238, 42, 0.35));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 4s;
+  animation-duration: 20s;
+  opacity: 0.7;
+}
+
+.watermark-text-4 {
+  top: 46%;
+  left: -25%;
+  font-size: 2.6rem;
+  background: linear-gradient(135deg, rgba(131, 222, 34, 0.35), rgba(53, 203, 224, 0.35));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 6s;
+  animation-duration: 17s;
+  opacity: 0.6;
+}
+
+.watermark-text-5 {
+  top: 60%;
+  left: -20%;
+  font-size: 3rem;
+  background: linear-gradient(135deg, rgba(53, 203, 224, 0.35), rgba(5, 238, 42, 0.35));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 3s;
+  animation-duration: 19s;
+  opacity: 0.65;
+}
+
+.watermark-text-6 {
+  top: 74%;
+  left: -30%;
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, rgba(5, 238, 42, 0.35), rgba(4, 83, 216, 0.35));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 5s;
+  animation-duration: 21s;
+  opacity: 0.6;
+}
+
+.watermark-text-7 {
+  top: 88%;
+  left: -15%;
+  font-size: 2.6rem;
+  background: linear-gradient(135deg, rgba(131, 222, 34, 0.30), rgba(53, 203, 224, 0.30));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 7s;
+  animation-duration: 16s;
+  opacity: 0.5;
+}
+
+/* Second layer - slightly different timing & direction */
+.watermark-text-8 {
+  top: 12%;
+  right: -20%;
+  font-size: 2.4rem;
+  background: linear-gradient(135deg, rgba(4, 83, 216, 0.25), rgba(53, 203, 224, 0.25));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideRightLeft 20s ease-in-out infinite alternate;
+  animation-delay: 1s;
+  opacity: 0.5;
+}
+
+.watermark-text-9 {
+  top: 40%;
+  right: -25%;
+  font-size: 2.6rem;
+  background: linear-gradient(135deg, rgba(5, 238, 42, 0.25), rgba(131, 222, 34, 0.25));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideRightLeft 22s ease-in-out infinite alternate;
+  animation-delay: 3s;
+  opacity: 0.5;
+}
+
+.watermark-text-10 {
+  top: 68%;
+  right: -20%;
+  font-size: 2.4rem;
+  background: linear-gradient(135deg, rgba(53, 203, 224, 0.25), rgba(4, 83, 216, 0.25));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideRightLeft 18s ease-in-out infinite alternate;
+  animation-delay: 5s;
+  opacity: 0.45;
+}
+
+/* ===== SLIDING ANIMATIONS ===== */
+@keyframes slideLeftRight {
+  0% {
+    transform: translateX(0vw) scale(1);
+    opacity: 0.3;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(110vw) scale(1.02);
+    opacity: 0.3;
+  }
+}
+
+@keyframes slideRightLeft {
+  0% {
+    transform: translateX(0vw) scale(1);
+    opacity: 0.3;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-110vw) scale(1.02);
+    opacity: 0.3;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .watermark-text-1,
+  .watermark-text-2,
+  .watermark-text-3,
+  .watermark-text-4,
+  .watermark-text-5,
+  .watermark-text-6 {
+    font-size: 1.8rem;
+  }
+  .watermark-text-7,
+  .watermark-text-8,
+  .watermark-text-9,
+  .watermark-text-10 {
+    font-size: 1.5rem;
+  }
+}
